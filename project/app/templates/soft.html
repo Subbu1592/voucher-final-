@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>pdf</title>
+  <style>
+    footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 75px;
+}
+
+footer hr {
+    margin-bottom: -22px;
+    border-top: 3px ;
+}
+
+footer a {
+    color: rgb(235, 197, 197);
+}
+
+footer p {
+    padding: 6px;
+    border: 3px solid ;
+    background-color: rgb(235, 185, 185);
+    display: inline-block;
+    position: fixed;
+    bottom: 0;
+}
+
+
+.table {
+        --bs-table-bg: transparent;
+        --bs-table-striped-color: #495057;
+        --bs-table-striped-bg: #f8f9fa;
+        --bs-table-active-color: #495057;
+        --bs-table-active-bg: #f8f9fa;
+        --bs-table-hover-color: #495057;
+        --bs-table-hover-bg: #f8f9fa;
+        width: 100%;
+        margin-bottom: 1rem;
+        color: #495057;
+        vertical-align: top;
+        border-color: #eff2f7; }
+
+
+
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; }
+
+  #bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+ 
+  </style>
+  </head>
+  <body>
+    
+    {% for i in voucher %}
+    
+   
+      <div class="container">
+        <img src="{{i.logo.path}}" alt="" width="230px" height="60px" style="background-color: #495057; ">
+          <h1 style="text-align:  center; font-family: 'Times New Roman', Times, serif;">Merida Skill Learning Academy</h1>
+          <h3 style="text-align:  center; font-family: 'Times New Roman', Times, serif;">A Division of Merida Tech Minds (OPC) PVT LTD</h3>
+          <p style="text-align:  center; font-family: 'Times New Roman', Times, serif;">30th Cross, jayanagar 4th Block, Bangalore -560011 <br>
+          E-mail:info@skilllearningacademy.com</p>
+          <hr style=" height: 2px; color:brown">
+      </div>
+   
+
+
+    <div class="container">
+      <h1 style="text-align: center;"> <u>Payment Voucher</u> </h1>
+    </div>
+
+<div class="container">
+  <h2> Voucher Id: {{forloop.counter}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    Date: {{i.date}}</h2>
+
+    <br>
+    <h1>Sum of Rupees: {{i.amount}}</h1>
+    <h1>Paid to: {{i.paid_to}}</h1>
+    <h1>On Account of: {{i.on_account_of}}</h1>
+    <h1>email: {{i.email}}</h1>
+    <br>
+    <h1>Paid by: {{i.paid_by}}   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Approved by: {{i.approved_by}}</h1>
+
+       <hr>
+      <center><h1> <u>Payment Info</u> </h1></center>
+      <br>
+      <h1>Payment Mode: {{i.payment_mode}}</h1>
+      <h2>If card (card details): {{i.card_details}}</h2>
+      <h2>If Digital Transaction (transaction id): {{i.transaction_id}}</h2>
+      
+</div>
+   
+             
+    <div class="container" style="position:fixed; bottom: 0;">
+      
+
+      
+     
+        <br><br>
+
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </div>
+
+  <div id="bottom" style="bottom: 0; position: absolute;">
+  <div class="container">
+  
+    
+  </div>
+
+  <div class="container">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <h1 style="display: inline-block; ">Payor Signature</h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <h1 style="display: inline-block">Approver Signature</h1>
+    
+  </div>
+
+ 
+              <!-- Cart BG -->
+              <div id="footer" >
+
+                
+              </div>
+             
+              <footer style="bottom: 0;">
+                  <hr>
+                  <p class="m-0 text-center">
+                      Merida Tech Minds
+                  </p>
+                  <div class="social pt-3">
+                      
+                          
+                      
+                  </div>
+              </footer>
+          </div>
+      </div>
+    </div>
+  
+        {% endfor %}
+     
+<hr>
+    
+       
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+   
+  </body>
+</html>

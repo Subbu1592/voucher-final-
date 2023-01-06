@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Add{% endblock title %}
+
+
+{% block content %}
+<div class="containe">
+    <div class="row">
+        <h1 style="text-align: center; font-family: 'Times New Roman', Times, serif;">Merida Skill Learning Academy</h1>
+        <h3 style="text-align: center; font-family: 'Times New Roman', Times, serif; font-size: medium;">A Division of Merida Tech Minds(OPC) PVT LTD</h3>
+        <p style="text-align: center; font-family: 'Times New Roman', Times, serif;">30th Cross, Jayanagr 4th Block, Bangalore -560011 <br>
+        E-mail:info@skilllearningacadem.com</p>
+    </div>
+
+
+</div>
+<hr style="height: 3px; color: brown;">
+
+
+
+    <div class="container" style="width: fit-content;">
+        <div class="row" class="mb-3">
+            
+            <form action="" method="POST" enctype="multipart/form-data" >
+                {% csrf_token %}
+                {{ form.as_p }}
+                
+               
+                <center><button type="submit" class="btn btn-primary">Submittt</button></center>
+              </form>
+          
+
+             
+        </div>
+      </div>
+
+{% endblock content %}

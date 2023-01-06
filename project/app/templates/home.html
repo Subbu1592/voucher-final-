@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Home{% endblock title %}
+
+{% block content1 %}
+<div class="container">
+  <img src="{% static 'images/3.jpeg' %}" alt="" width="200px" height="55px" >
+    <h1 style="text-align:  center; font-family: 'Times New Roman', Times, serif;">Merida Skill Learning Academy</h1>
+    <h3 style="text-align:  center; font-family: 'Times New Roman', Times, serif;">A Division of Merida Tech Minds (OPC) PVT LTD</h3>
+    <p style="text-align:  center; font-family: 'Times New Roman', Times, serif;">30th Cross, jayanagar 4th Block, Bangalore -560011 <br>
+    E-mail:info@skilllearningacademy.com</p>
+    <hr style=" height: 2px; color:brown">
+</div>
+
+
+{% endblock content1 %}
+
+
+{% block voucher %}
+
+<br><br>
+
+<div class="container">
+  <h1 style="text-align: center; font-family: 'Times New Roman', Times, serif;"> <u style="color: rgb(206, 121, 113);">Voucher </u> </h1>
+<br>
+<center>  <a href="/admin"><button class="btn btn-info">Admin</button></a></center>
+
+  <table class="table table-bordered">
+    <br>
+      <thead>
+        <tr>
+          <th scope="col">Sl no</th>
+          <th scope="col">Date</th>
+          <th scope="col">Voucher No</th>
+          <th scope="col">Paid to </th>
+          <th scope="col">Email Id: </th>
+          
+          <th scope="col">Amount</th>
+          
+          <th scope="col">Payment By</th>
+          <th scope="col">Approved By</th>
+         
+        
+         
+          <th scope="col"> <center> Action </center> </th>
+          
+
+          
+          
+          
+        </tr>
+      </thead>
+      <tbody>
+          {% for a in voucher %}
+        <tr>
+          <th>{{forloop.counter}}</th>
+          <td>{{a.date}}</td>
+          <td>{{a.voucher_no}}</td>
+          <td>{{a.paid_to}}</td>
+          <td>{{a.email}}</td>
+          <td>{{a.amount}}</td>
+          
+          <td> {{a.paid_by}} </td>
+          <td>{{a.approved_by}}</td>
+         
+          
+          
+          
+          
+         
+         <td>
+
+          
+          <a href="soft/{{a.id}}"><button class="btn btn-info">print</button></a>
+        
+            
+      </td>
+        </tr>
+          {% endfor %}
+      </tbody>
+    </table>
+    <br>
+<center><a href="/add"><button class="btn btn-info">Add Vouchers</button></a></center>
+</div>
+
+<br><br><br><br>
+ {% endblock voucher %}
